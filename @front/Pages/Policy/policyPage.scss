@@ -1,0 +1,10 @@
+.app-policypage {
+  padding-top: 20px;
+
+  &__container {
+    & p {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  }
+}

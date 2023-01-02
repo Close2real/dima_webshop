@@ -1,0 +1,151 @@
+:root {
+	--container-size: 100%;
+	--container-size-medium: 960px;
+	--container-size-small: 768px;
+	--layout-spacing: var(--spacing);
+}
+
+#root {
+	height: 100%;
+}
+
+.simplebar-menu-opened {
+	overflow: hidden;
+}
+
+.simplebar-content {
+	height: 100%;
+}
+
+.simplebar-scrollbar {
+
+	&::before {
+		background: rgb(183, 193, 201);
+		background: linear-gradient(180deg, rgba(183, 193, 201, 1) 0%, rgba(216, 222, 226, 1) 100%);
+	}
+}
+
+.path-\/login {
+	& .contain {
+		height: calc(100vh - 64px);
+		justify-content: center;
+	}
+}
+
+.layout {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 332px;
+
+	&__main {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex: 1;
+		padding: 0;
+		transition: all .5s;
+		border-top: 1px solid #c9c9c9;
+
+		&__login {
+			display: initial;
+			grid-column: 1 / span 2;
+		}
+
+		&__side-closed {
+			grid-column: 1 / span 2;
+		}
+
+		& > .contain {
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+		}
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	background: var(--amex-bg);
+	margin: 0 auto;
+
+	&.size {
+
+		&--medium {
+			width: var(--container-size-small);
+		}
+
+		&--small {
+			width: var(--container-size-small);
+		}
+
+		&--smaller {
+			width: calc(var(--container-size-small) / 1.25);
+		}
+	}
+}
+
+
+.layout-loader {
+	display: flex;
+	width: 100%;
+	height: 30vh;
+
+	&::before {
+		content: "Caricamento...";
+		border-radius: var(--roundness-m);
+		background-size: 200% 200%;
+		background-image: linear-gradient(90deg, #fefefe 0, #dee4ea 50%, #fefefe 100%);
+		font-size: var(--fs-small);
+		color: var(--bmed-secondary);
+		animation: 2s skeleton-loading linear infinite;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--layout-spacing);
+		font-weight: var(--fw-medium);
+	}
+}
+
+.page-title {
+	margin-bottom: var(--layout-spacing);
+
+	&.with-filters {
+		margin-bottom: 0;
+		border-bottom: 0;
+	}
+}
+
+.row {
+	position: relative;
+	z-index: 1;
+	padding-bottom: var(--layout-spacing);
+
+	.title + &,
+	&:first-of-type,
+	& + & {
+		padding-top: 0;
+	}
+
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+}
+
+.contain {
+	width: var(--container-size);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@keyframes skeleton-loading {
+	to {
+		background-position-x: -200%;
+	}
+}

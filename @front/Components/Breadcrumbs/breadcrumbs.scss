@@ -1,0 +1,20 @@
+.component-breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  &__item {
+    position: relative;
+
+    & + & {
+      margin-left: 20px;
+
+      &:before {
+        display: block;
+        position: absolute;
+        content: ">";
+        left: - 14px;
+      }
+    }
+  }
+}

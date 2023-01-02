@@ -1,0 +1,60 @@
+.app-contactspage {
+  &__container {
+    &__title {
+      display: flex;
+      background: rgb(14,0,255);
+      background: linear-gradient(30deg, rgba(14,0,255,1) 0%, rgba(154,154,255,1) 35%, rgba(191,244,255,1) 100%);
+      width: 100%;
+      text-align: center;
+      height: 200px;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    &__main {
+      display: flex;
+      flex-direction: row;
+
+      &__left {
+        flex: 140;
+        &__item {
+          font-size: 16px;
+          font-weight: 700;
+
+          & + & {
+            margin-top: 20px;
+          }
+        }
+      }
+
+      &__right {
+        flex: 140;
+
+        &__form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding: 20px;
+          border: 1px solid #000;
+
+          & input {
+            padding: 15px;
+
+            &[type=submit] {
+              background-color: #000;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+
+        &__title {
+          margin-bottom: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+
+  }
+}

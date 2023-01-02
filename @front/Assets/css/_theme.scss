@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+	--spacing-xl: 4rem;
+	--spacing-l: 3rem;
+	--spacing: 2rem;
+	--spacing-m: 1rem;
+	--spacing-xm: 1.5rem;
+	--spacing-s: 0.5rem;
+	--spacing-xs: 0.25rem;
+
+	--roundness: var(--spacing-m);
+	--roundness-m: var(--spacing-s);
+	--roundness-s: var(--spacing-xs);
+
+	/*
+	--font-primary: 'Ubuntu', sans-serif;
+	*/
+
+	--font-primary: 'Inter', sans-serif;
+
+	--fw-light: 300;
+	--fw-normal: 400;
+	--fw-medium: 500;
+	--fw-bold: 700;
+
+	--fs-default: 16px;
+	--fs-small: 13px;
+	--fs-smaller: 12px;
+	--fs-smallest: 11px;
+	--fs-medium: 18px;
+	--fs-large: 22px;
+	--fs-xlarge: 24px;
+
+	--bmed-bg: #fafafa;
+	--bmed-white: #fff;
+	--bmed-black: #212329;
+	--bmed-gray: #E6E6E6;
+	--bmed-light-gray: #c6cad1;
+	--bmed-dark-gray: #6f717a;
+
+	--bmed-primary: #192D6E;
+	--bmed-primary-light: #4d9add;
+	--bmed-primary-lighter: #99c5ec;
+	--bmed-primary-dark: #004e91;
+	--bmed-primary-darker: #002c53;
+	--bmed-primary-tint: #cce2f5;
+	--bmed-primary-tint-alt: #e6f1fa;
+
+	--bmed-secondary: #1E96D7;
+	--bmed-secondary-light: #9eb5b8;
+	--bmed-secondary-lighter: #c7d5d7;
+	--bmed-secondary-dark: #51686c;
+	--bmed-secondary-darker: #2e3c3e;
+	--bmed-secondary-tint: #e3eaeb;
+	--bmed-secondary-tint-alt: #f1f4f5;
+
+	--bmed-danger: #e02f5a;
+	--bmed-danger-light: #e96d8c;
+	--bmed-danger-lighter: #f3acbd;
+	--bmed-danger-dark: #a22846;
+	--bmed-danger-darker: #813446;
+
+	--bmed-warning: #ffc409;
+	--bmed-warning-light: #ffd03a;
+	--bmed-warning-lighter: #ffdc6b;
+	--bmed-warning-dark: #cc9d07;
+	--bmed-warning-darker: #997605;
+
+	--bmed-success: #54d28a;
+	--bmed-success-light: #87e0ad;
+	--bmed-success-lighter: #bbedd0;
+	--bmed-success-dark: #3b9361;
+	--bmed-success-darker: #225437;
+
+	--animation-duration: .25s;
+	--animated: all var(--animation-duration) ease-in-out;
+
+	--shadow: 0 0 20px 0 rgba(199, 199, 199, 0.5);
+}

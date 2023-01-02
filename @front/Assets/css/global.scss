@@ -1,0 +1,331 @@
+@import "normalize";
+@import "theme";
+@import "utils";
+@import "components/merge";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+html {
+    font-size: var(--fs-default);
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html * {
+    font-family: inherit;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow-y: scroll;
+
+    &.ReactModal__Body--open {
+        overflow-y: hidden;
+    }
+}
+
+svg {
+    fill: currentColor;
+    font-size: inherit;
+    max-width: 100%;
+    max-height: 100%;
+    transition: var(--animated);
+
+    &.fill-stroke > path {
+        stroke: currentColor;
+    }
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    line-height: 1;
+
+    &.center {
+        align-items: center;
+    }
+
+    & > h1,
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6,
+    & > p {
+        font-size: var(--title-fs);
+        font-weight: var(--title-fw);
+        color: var(--title-color);
+        text-transform: var(--title-case);
+
+        &.case {
+
+            &-default {
+                text-transform: initial;
+            }
+        }
+
+        &.weight {
+
+            &-medium {
+                font-weight: var(--fw-medium);
+            }
+
+            &-bold {
+                font-weight: var(--fw-bold);
+            }
+        }
+
+        &.color {
+
+            &--white {
+                --title-color: var(--bmed-white);
+            }
+        }
+    }
+
+    &__main {
+        --title-fs: var(--fs-large);
+        --title-fw: var(--fw-bold);
+        --title-color: var(--bmed-secondary-dark);
+        --title-case: uppercase;
+        letter-spacing: .5px;
+        text-shadow: 1px 1px 0px var(--bmed-secondary-lighter);
+    }
+
+    &__primary {
+        --title-fs: var(--fs-large);
+        --title-fw: var(--fw-semibold);
+        --title-color: var(--bmed-black);
+        --title-case: initial;
+    }
+
+    &__secondary {
+        --title-fs: var(--fs-medium);
+        --title-fw: var(--fw-medium);
+        --title-color: var(--bmed-black);
+        --title-case: initial;
+    }
+
+    &__description {
+        --title-fs: var(--fs-small);
+        --title-fw: var(--fw-normal);
+        --title-color: var(--bmed-black);
+        --title-case: initial;
+        margin-top: var(--spacing-s);
+        line-height: 1.4;
+    }
+
+    &--spacing {
+
+        &-m {
+            & + * {
+                margin-top: var(--spacing);
+            }
+        }
+
+        &-s {
+            & + * {
+                margin-top: var(--spacing-m);
+            }
+        }
+    }
+
+    &__btns {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    & .btn {
+        position: absolute;
+        right: 0;
+
+        &.inline {
+            position: relative;
+            right: initial;
+        }
+
+        & + .btn {
+            margin-left: var(--spacing-s);
+        }
+    }
+}
+
+.expandable {
+    position: relative;
+    cursor: pointer;
+    transition: var(--animated);
+    color: var(--bmed-secondary-dark);
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    padding: var(--spacing-m);
+    border-radius: var(--roundness-m);
+    border: 2px solid var(--bmed-secondary-light);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: var(--fw-light);
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    line-height: 1;
+
+    &__label {
+        font-weight: var(--fw-bold) !important;
+        letter-spacing: .5px;
+    }
+
+    & ~ * {
+        display: none !important;
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+
+        & svg {
+            font-size: 20px;
+            transition: var(--animated);
+        }
+    }
+
+    &.toggled {
+        margin-bottom: var(--spacing-m);
+        background: var(--bmed-secondary-light);
+        color: var(--bmed-white);
+        border-color: var(--bmed-secondary);
+
+        & ~ * {
+            display: block !important;
+        }
+
+        & > p {
+
+        }
+
+        & > span {
+
+        }
+
+        & svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &.toggled-flex {
+        margin-bottom: var(--spacing-m);
+        background: var(--bmed-secondary-light);
+        color: var(--bmed-white);
+        border-color: var(--bmed-secondary);
+
+        & ~ * {
+            display: flex !important;
+        }
+
+        & > p {
+
+        }
+
+        & > span {
+
+        }
+
+        & svg {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.no-results {
+    padding: var(--spacing);
+    background: var(--bmed-white);
+    box-shadow: var(--shadow);
+    border-radius: var(--roundness-m);
+    color: var(--bmed-secondary-light);
+    font-weight: var(--fw-medium);
+    text-align: center;
+    font-size: var(--fs-default);
+}
+
+.Toastify {
+
+    &__toast {
+        padding-top: 6px;
+        color: var(--bmed-black);
+
+        &--error {
+            color: var(--bmed-danger-dark);
+        }
+
+        &--success {
+            color: var(--bmed-success-dark);
+        }
+
+        &--warning {
+            color: var(--bmed-warning-dark);
+        }
+
+        &-body {
+
+            & > div:last-of-type {
+                font-size: var(--fs-small);
+                font-weight: var(--fw-normal);
+                font-family: var(--font-primary);
+                color: inherit;
+            }
+        }
+    }
+
+    &__close-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+    }
+}
+
+.sort-active {
+    color: green;
+}
+
+.btn {
+    &_main {
+        border-radius: 8px;
+        background: #fff;
+        font-size: 14px;
+        padding: 10px;
+        color: var(--bmed-primary);
+        border: 1px solid var(--bmed-primary);
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    &_secondary {
+        border-radius: 8px;
+        background: var(--bmed-primary);
+        font-size: 14px;
+        padding: 10px;
+        color: #fff;
+        border: 0;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}

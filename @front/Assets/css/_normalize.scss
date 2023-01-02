@@ -1,0 +1,62 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+a, input, button, .animated {
+	transition: var(--animated)
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: inner-spin-button !important;
+	opacity: 1;
+	margin-left: 5px;
+}
+
+textarea {
+	height: 180px;
+	resize: vertical;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-repeat: no-repeat;
+	background-position-x: 99%;
+	background-position-y: 50%;
+	background-image: url("data:image/svg+xml;utf8,<svg fill='6b6065' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+	padding-right: 2rem !important;
+	height: 46.4px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[matinput]::-webkit-outer-spin-button,
+input[matinput]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[matinput][type=number] {
+	-moz-appearance: textfield;
+}
